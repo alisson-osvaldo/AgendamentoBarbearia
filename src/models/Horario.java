@@ -1,15 +1,15 @@
 package models;
 
-public class HorarioDia {
+public class Horario {
     private int hora;
     private Agendamento agendamento;
 
-    public HorarioDia(int hora) {
+    public Horario(int hora) {
         this.hora = hora;
         this.agendamento = null;
     }
 
-    public HorarioDia(int hora, Agendamento agendamento) {
+    public Horario(int hora, Agendamento agendamento) {
         this.hora = hora;
         this.agendamento = agendamento;
     }

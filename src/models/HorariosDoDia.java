@@ -1,14 +1,14 @@
 package models;
 import java.util.ArrayList;
 
-public class HorariosDisponiveisNoDia {
+public class HorariosDoDia {
     private String dia;
-    private static ArrayList<HorarioDia> horarios = new ArrayList<HorarioDia>();
+    private static ArrayList<Horario> horarios = new ArrayList<Horario>();
 
-    public HorariosDisponiveisNoDia(String dia) {
+    public HorariosDoDia(String dia) {
         this.dia = dia;
         for (int i = 8; i <= 17 ; i++) {
-            HorarioDia horario = new HorarioDia(i);
+            Horario horario = new Horario(i);
             horarios.add(horario);
         }
     }
@@ -17,7 +17,7 @@ public class HorariosDisponiveisNoDia {
         return dia;
     }
 
-    public static ArrayList<HorarioDia> getHorarios() {
+    public static ArrayList<Horario> getHorarios() {
         return horarios;
     }
 }

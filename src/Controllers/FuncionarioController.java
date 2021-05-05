@@ -3,7 +3,7 @@ package Controllers;
 
 import java.util.ArrayList;
 import models.Funcionario;
-import models.HorariosDisponiveisNoDia;
+import models.HorariosDoDia;
 
 public class FuncionarioController {
     private static ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
@@ -18,7 +18,7 @@ public class FuncionarioController {
 
        for(Funcionario funcionarioCadastrado : funcionarios) {
 
-           for(HorariosDisponiveisNoDia horariosDisponiveisNoDia : funcionarioCadastrado.getHorariosDisponiveisNoMes()) {
+           for(HorariosDoDia horariosDisponiveisNoDia : funcionarioCadastrado.getHorariosDisponiveisNoMes()) {
                System.out.println(horariosDisponiveisNoDia.getHorarios());
            }
        }

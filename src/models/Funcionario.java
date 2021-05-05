@@ -11,13 +11,15 @@ public class Funcionario {
     private String cpf;
     private int horarioInicio;
     private int horarioFim;
-    private static ArrayList<HorariosDisponiveisNoDia> horariosDisponiveisNoMes = new ArrayList<HorariosDisponiveisNoDia>();
+    private static ArrayList<HorariosDoDia> horariosDisponiveisNoMes = new ArrayList<HorariosDoDia>();
 
     public Funcionario(String nomeFuncionario, String cpf, int horarioInicio, int horarioFim) {
         this.nomeFuncionario = nomeFuncionario;
         this.cpf = cpf;
         this.horarioInicio = horarioInicio;
         this.horarioFim = horarioFim;
+        // Cria os horários dos próximos 30 dias a partir da data atual
+        // Cada horario do dia tem um
         for (int i = 0; i < 30; i++) {
             SimpleDateFormat dateFormat=new SimpleDateFormat();
             dateFormat.applyPattern("dd-MM-yyyy");
@@ -26,7 +28,7 @@ public class Funcionario {
             c.add(Calendar.DAY_OF_YEAR, i);
             Date date = c.getTime();
 
-            HorariosDisponiveisNoDia horarioDia = new HorariosDisponiveisNoDia(dateFormat.format(date));
+            HorariosDoDia horarioDia = new HorariosDoDia(dateFormat.format(date));
             horariosDisponiveisNoMes.add(horarioDia);
         }
     }
@@ -39,7 +41,7 @@ public class Funcionario {
         this.cpf = cpf;
     }
 
-    public static ArrayList<HorariosDisponiveisNoDia> getHorariosDisponiveisNoMes() {
+    public static ArrayList<HorariosDoDia> getHorariosDisponiveisNoMes() {
         return horariosDisponiveisNoMes;
     }
 
