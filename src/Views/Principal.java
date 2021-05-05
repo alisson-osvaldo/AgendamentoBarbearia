@@ -1,6 +1,9 @@
 package Views;
 import Views.CadastrarCliente;
 import java.util.Scanner;
+import java.util.Calendar;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Principal {
      public static void main(String[] args) {
@@ -27,7 +30,18 @@ public class Principal {
                 case 3 :
                     CadastrarFuncionario.renderizar();
                     break;
-            
+                case 4 :
+                    for (int i = 0; i < 30; i++) {
+                        SimpleDateFormat dateFormat=new SimpleDateFormat();
+                        dateFormat.applyPattern("dd-MM-yyyy");
+
+                        Calendar c = Calendar.getInstance();
+                        c.add(Calendar.DAY_OF_YEAR, i);
+                        Date date = c.getTime();
+
+                        System.out.println(dateFormat.format(date));
+                    }
+                    break;
             }
             
         }while(opcao != 0);

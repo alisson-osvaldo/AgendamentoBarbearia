@@ -14,9 +14,6 @@ public class EntradaAgendamento {
         
         System.out.println("----AGENDAMENTO DE HORÀRIO----");
         System.out.println("\nInforme o horario:");
-        agendamento.setHorario(sc.nextInt());
-        System.out.println("\nInforme o dia:");
-        agendamento.setData(sc.next());
         System.out.println("\nInforme o tipo de serviço:");
         //agendamento.setTiposervico();
         //mostrar valor do serviço
