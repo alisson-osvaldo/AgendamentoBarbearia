@@ -10,9 +10,26 @@ public class Agendamento {
 	
 	private Cliente cliente;
         private Funcionario funcionario; 
-	private String horario;
-	private Date data;
-	private String tipoCorte;
+        private TipoServico tiposervico;
+	private int horario;
+	private String data;
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+
+    public TipoServico getTiposervico() {
+        return tiposervico;
+    }
+
+    public void setTiposervico(TipoServico tiposervico) {
+        this.tiposervico = tiposervico;
+    }
+	
 
     public Cliente getCliente() {
         return cliente;
@@ -22,32 +39,25 @@ public class Agendamento {
         this.cliente = cliente;
     }
 
-    public String getHorario() {
+    public int getHorario() {
         return horario;
     }
 
-    public void setHorario(String horario) {
+    public void setHorario(int horario) {
         this.horario = horario;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
-    public String getTipoCorte() {
-        return tipoCorte;
-    }
-
-    public void setTipoCorte(String tipoCorte) {
-        this.tipoCorte = tipoCorte;
-    }
-                
-   
-
+    
+    
+    
     private void setCriadoEm(Date date) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
