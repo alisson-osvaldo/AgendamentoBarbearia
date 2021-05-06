@@ -18,11 +18,15 @@ public class Principal {
             
             
             switch (opcao) {
-            case 1 -> CadastrarCliente.renderizar();
-                
-            case 2 -> ListarClientes.renderizar();
-            
-            case 3 -> CadastrarFuncionario.renderizar();
+                case 1 :
+                    CadastrarCliente.renderizar();
+                    break;
+                case 2:
+                    ListarClientes.renderizar();
+                    break;
+                case 3 :
+                    CadastrarFuncionario.renderizar();
+                    break;
             
             }
             

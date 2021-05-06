@@ -3,17 +3,7 @@ package models;
  
 public class Funcionario {
     private String nomeFuncionario;
-    private int hrTrabalho;
     private String cpf;
-
-    
-    public int getHrTrabalho() {
-        return hrTrabalho;
-    }
-
-    public void setHrTrabalho(int hrTrabalho) {
-        this.hrTrabalho = hrTrabalho;
-    }
 
     public String getCpf() {
         return cpf;
@@ -23,11 +13,6 @@ public class Funcionario {
         this.cpf = cpf;
     }
 
-    
-    public Funcionario(){
-            
-    }
-              
     public String getNomeFuncionario() {
         return nomeFuncionario;
     }
@@ -35,8 +20,6 @@ public class Funcionario {
     public void setNomeFuncionario(String nomeFuncionario) {
         this.nomeFuncionario = nomeFuncionario;
     }
-
-   
        
 }
     

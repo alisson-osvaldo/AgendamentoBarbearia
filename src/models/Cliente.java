@@ -18,8 +18,6 @@ public final class Cliente {
     private String telefone;
     private Date   criadoEm;
 
-
-
     public String getEndereco() {
                     return endereco;
     }

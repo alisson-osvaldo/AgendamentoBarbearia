@@ -22,5 +22,4 @@ public class TipoServico {
         this.valor = valor;
     }
     
-    
 }
