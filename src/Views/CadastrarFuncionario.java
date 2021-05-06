@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import Controllers.FuncionarioController;
 import models.Funcionario;
+import models.Horario;
+import models.HorariosDoDia;
 
 public class CadastrarFuncionario {
     
@@ -19,13 +21,14 @@ public class CadastrarFuncionario {
         System.out.println("\nInforme o cpf do funcionario:");
         String cpf = sc.next();
         System.out.println("\nInforme o horário de entrada do funcionário:");
-        int horarioInicio = sc.nextInt();
+        int horarioInicio = 10; // ALTERAR
         System.out.println("\nInforme o horário de saída do funcionário:");
-        int horarioFim = sc.nextInt();
+        int horarioFim = 15; // ALTERAR
 
         newFuncionario = new Funcionario(nome, cpf, horarioInicio, horarioFim);
         FuncionarioController.cadastrar(newFuncionario);
-
-        System.out.println(newFuncionario);
+        for (HorariosDoDia horariosdoMes: newFuncionario.getHorariosDisponiveisNoMes()) {
+            System.out.println(horariosdoMes.getHorarios());
+        }
     }
 }

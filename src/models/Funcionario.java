@@ -2,7 +2,6 @@
 package models;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,7 +10,7 @@ public class Funcionario {
     private String cpf;
     private int horarioInicio;
     private int horarioFim;
-    private static ArrayList<HorariosDoDia> horariosDisponiveisNoMes = new ArrayList<HorariosDoDia>();
+    private HorariosDoDia[] horariosDisponiveisNoMes = new HorariosDoDia[30];
 
     public Funcionario(String nomeFuncionario, String cpf, int horarioInicio, int horarioFim) {
         this.nomeFuncionario = nomeFuncionario;
@@ -27,8 +26,8 @@ public class Funcionario {
             c.add(Calendar.DAY_OF_YEAR, i);
             Date date = c.getTime();
 
-            HorariosDoDia horarioDia = new HorariosDoDia(dateFormat.format(date));
-            horariosDisponiveisNoMes.add(horarioDia);
+            HorariosDoDia horarioDia = new HorariosDoDia(dateFormat.format(date), horarioInicio, horarioFim);
+            horariosDisponiveisNoMes[i] = new HorariosDoDia(dateFormat.format(date), horarioInicio, horarioFim);
         }
     }
 
@@ -40,7 +39,7 @@ public class Funcionario {
         this.cpf = cpf;
     }
 
-    public static ArrayList<HorariosDoDia> getHorariosDisponiveisNoMes() {
+    public HorariosDoDia[] getHorariosDisponiveisNoMes() {
         return horariosDisponiveisNoMes;
     }
 

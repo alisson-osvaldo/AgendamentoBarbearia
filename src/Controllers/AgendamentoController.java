@@ -16,6 +16,8 @@ public class AgendamentoController {
         Cliente cliente = ClienteController.procurarPorCpf(cpfCliente);
         Funcionario funcionario = FuncionarioController.procurarPorCpf(cpfFuncionario);
 
+        FuncionarioController.horarioEstaDisponivelParaMarcar(funcionario, "09-05-2021", tipoServicoProcurado.getDuracaoEmHoras(), tipoServicoProcurado);
+
         if(tipoServicoProcurado == null) {
             System.out.println("Não existe um serviço com esse nome, não foi possível realizar o agendamento.");
             return false;

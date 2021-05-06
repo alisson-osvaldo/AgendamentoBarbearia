@@ -2,11 +2,10 @@
 package models;
 
 public class Agendamento {
-	private Cliente cliente;
+    private Cliente cliente;
     private Funcionario funcionario;
     private TipoServico tiposervico;
     private String dia;
-    private int duracaoEmHoras;
 
     public String getDia() {
         return dia;
@@ -38,13 +37,5 @@ public class Agendamento {
 
     public void setTiposervico(TipoServico tiposervico) {
         this.tiposervico = tiposervico;
-    }
-
-    public int getDuracaoEmHoras() {
-        return duracaoEmHoras;
-    }
-
-    public void setDuracaoEmHoras(int duracaoEmHoras) {
-        this.duracaoEmHoras = duracaoEmHoras;
     }
 }

@@ -7,14 +7,6 @@ public class TipoServico {
     private float valor;
     private int duracaoEmHoras;
 
-    public int getDuracaoEmHoras() {
-        return duracaoEmHoras;
-    }
-
-    public void setDuracaoEmHoras(int duracaoEmHoras) {
-        this.duracaoEmHoras = duracaoEmHoras;
-    }
-
     public String getTipo() {
         return tipo;
     }
@@ -31,11 +23,20 @@ public class TipoServico {
         this.valor = valor;
     }
 
+    public int getDuracaoEmHoras() {
+        return duracaoEmHoras;
+    }
+
+    public void setDuracaoEmHoras(int duracaoEmHoras) {
+        this.duracaoEmHoras = duracaoEmHoras;
+    }
+
     @Override
     public String toString() {
         return "TipoServico{" +
                 "tipo='" + tipo + '\'' +
                 ", valor=" + valor +
+                ", duracaoEmHoras=" + duracaoEmHoras +
                 '}';
     }
 }
