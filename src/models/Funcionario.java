@@ -27,7 +27,7 @@ public class Funcionario {
             c.add(Calendar.DAY_OF_YEAR, i);
             Date date = c.getTime();
 
-            HorariosDoDia horarioDia = new HorariosDoDia(dateFormat.format(date));
+            HorariosDoDia horarioDia = new HorariosDoDia(dateFormat.format(date), horarioInicio, horarioFim);
             horariosDisponiveisNoMes.add(horarioDia);
         }
     }
