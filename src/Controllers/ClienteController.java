@@ -21,4 +21,13 @@ public class ClienteController {
     clientes.add(cliente);
     return true;
     }
+
+    public static Cliente procurarPorCpf(String cpf){
+        for(Cliente clienteCadastrado : clientes) {
+            if(clienteCadastrado.getCpf().equals(cpf)){
+                return clienteCadastrado;
+            }
+        }
+        return null;
+    }
 }

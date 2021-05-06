@@ -1,9 +1,5 @@
 package Views;
-import Views.CadastrarCliente;
 import java.util.Scanner;
-import java.util.Calendar;
-import java.util.Date;
-import java.text.SimpleDateFormat;
 
 public class Principal {
      public static void main(String[] args) {
@@ -17,6 +13,7 @@ public class Principal {
             System.out.println("\n 2- Listar clientes");
             System.out.println("\n 3- Cadastrar funcionario");
             System.out.println("\n 4- Cadastrar Serviço");
+            System.out.println("\n 5- Agendar um serviço");
             System.out.println("\nEscolha uma opcão");
             opcao = sc.nextInt();
             
@@ -33,6 +30,9 @@ public class Principal {
                     break;
                 case 4 :
                     CadastrarServico.renderizar();
+                    break;
+                case 5 :
+                    AgendarServico.renderizar();
                     break;
             }
             

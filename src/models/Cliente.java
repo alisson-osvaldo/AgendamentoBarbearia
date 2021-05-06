@@ -57,7 +57,6 @@ public final class Cliente {
             return "Nome: " + getNome() + " | cpf: " + getCpf();
     }
 	
-	
 }
 
 

@@ -18,4 +18,22 @@ public class ServicoController {
         System.out.println(tipoServico.toString());
         return true;
     }
+
+    public static boolean existeServicoDesseTipo(String nomeServico){
+        for(TipoServico cadaTipoServico : tiposServicos) {
+            if(cadaTipoServico.getTipo().equals(nomeServico)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static TipoServico procurarPorServico(String nomeServico){
+        for(TipoServico cadaTipoServico : tiposServicos) {
+            if(cadaTipoServico.getTipo().equals(nomeServico)) {
+                return cadaTipoServico;
+            }
+        }
+        return null;
+    }
 }

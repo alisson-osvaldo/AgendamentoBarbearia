@@ -5,6 +5,15 @@ public class TipoServico {
     
     private String tipo;
     private float valor;
+    private int duracaoEmHoras;
+
+    public int getDuracaoEmHoras() {
+        return duracaoEmHoras;
+    }
+
+    public void setDuracaoEmHoras(int duracaoEmHoras) {
+        this.duracaoEmHoras = duracaoEmHoras;
+    }
 
     public String getTipo() {
         return tipo;
