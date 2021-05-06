@@ -3,7 +3,6 @@ package Controllers;
 
 import java.util.ArrayList;
 import models.Funcionario;
-import models.HorariosDoDia;
 
 public class FuncionarioController {
     private static ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
@@ -15,17 +14,11 @@ public class FuncionarioController {
             }
         }
         funcionarios.add(funcionario);
-
-       for(Funcionario funcionarioCadastrado : funcionarios) {
-
-           for(HorariosDoDia horariosDisponiveisNoDia : funcionarioCadastrado.getHorariosDisponiveisNoMes()) {
-               System.out.println(horariosDisponiveisNoDia.getHorarios());
-           }
-       }
         return true;
     }
 
     public static ArrayList<Funcionario> getFuncionarios() {
         return funcionarios;
     }
+
 }

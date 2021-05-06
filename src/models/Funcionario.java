@@ -19,7 +19,6 @@ public class Funcionario {
         this.horarioInicio = horarioInicio;
         this.horarioFim = horarioFim;
         // Cria os horários dos próximos 30 dias a partir da data atual
-        // Cada horario do dia tem um
         for (int i = 0; i < 30; i++) {
             SimpleDateFormat dateFormat=new SimpleDateFormat();
             dateFormat.applyPattern("dd-MM-yyyy");

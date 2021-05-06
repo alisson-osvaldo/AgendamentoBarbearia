@@ -16,6 +16,7 @@ public class Principal {
             System.out.println("\n 1- Cadastrar cliente");
             System.out.println("\n 2- Listar clientes");
             System.out.println("\n 3- Cadastrar funcionario");
+            System.out.println("\n 4- Cadastrar Serviço");
             System.out.println("\nEscolha uma opcão");
             opcao = sc.nextInt();
             
@@ -31,16 +32,7 @@ public class Principal {
                     CadastrarFuncionario.renderizar();
                     break;
                 case 4 :
-                    for (int i = 0; i < 30; i++) {
-                        SimpleDateFormat dateFormat=new SimpleDateFormat();
-                        dateFormat.applyPattern("dd-MM-yyyy");
-
-                        Calendar c = Calendar.getInstance();
-                        c.add(Calendar.DAY_OF_YEAR, i);
-                        Date date = c.getTime();
-
-                        System.out.println(dateFormat.format(date));
-                    }
+                    CadastrarServico.renderizar();
                     break;
             }
             
