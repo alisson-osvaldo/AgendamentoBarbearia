@@ -1,15 +1,15 @@
 
 package models;
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class Agendamento {
     private Cliente cliente;
     private Funcionario funcionario;
     private TipoServico tiposervico;
-    private Date data;
+    private Calendar data;
 
-    public Agendamento(Cliente cliente, Funcionario funcionario, TipoServico tiposervico, Date data) {
+    public Agendamento(Cliente cliente, Funcionario funcionario, TipoServico tiposervico, Calendar data) {
         this.cliente = cliente;
         this.funcionario = funcionario;
         this.tiposervico = tiposervico;
@@ -40,11 +40,11 @@ public class Agendamento {
         this.tiposervico = tiposervico;
     }
 
-    public Date getData() {
+    public Calendar getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(Calendar data) {
         this.data = data;
     }
 }

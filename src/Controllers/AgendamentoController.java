@@ -6,13 +6,14 @@ import models.Cliente;
 import models.Funcionario;
 import models.TipoServico;
 import java.util.Date;
+import java.util.Calendar;
 
 import java.util.ArrayList;
 
 public class AgendamentoController {
     private static ArrayList<Agendamento> agendamentos = new ArrayList<Agendamento>();
 
-    public static boolean agendar(String tipoServico, String cpfCliente, String cpfFuncionario, Date data){
+    public static boolean agendar(String tipoServico, String cpfCliente, String cpfFuncionario, Calendar data){
       Funcionario funcionario = FuncionarioController.procurarPorCpf(cpfFuncionario);
       Cliente cliente = ClienteController.procurarPorCpf(cpfCliente);
       TipoServico servico = ServicoController.procurarPorServico((tipoServico));
@@ -44,10 +45,20 @@ public class AgendamentoController {
       return true;
     }
 
-    public static boolean horarioEstaDisponivel(Funcionario funcionario, Date data){
+    public static boolean horarioEstaDisponivel(Funcionario funcionario, Calendar data){
         for(Agendamento agendamento : agendamentos) {
-            if(agendamento.getFuncionario().equals(funcionario) && agendamento.getData().equals(data)) {
-                return false;
+            System.out.println("Data parametro: "+  data);
+            System.out.println("Data agendamento: "+ agendamento.getData());
+            if((agendamento.getFuncionario().getCpf().equals(funcionario.getCpf()))) {
+                if(agendamento.getData().get(Calendar.YEAR) == data.get(Calendar.YEAR)) {
+                    if(agendamento.getData().get(Calendar.MONTH) == data.get(Calendar.MONTH)) {
+                        if(agendamento.getData().get(Calendar.DAY_OF_MONTH) == data.get(Calendar.DAY_OF_MONTH)) {
+                            if (agendamento.getData().get(Calendar.HOUR_OF_DAY) == data.get(Calendar.HOUR_OF_DAY)) {
+                                return false;
+                            }
+                        }
+                    }
+                }
             }
         }
         return true;

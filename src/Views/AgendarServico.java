@@ -32,9 +32,7 @@ public class AgendarServico {
         Calendar c = Calendar.getInstance();
         c.set(ano, mes - 1, dia, hora, 0, 0);
 
-        Date data = c.getTime();
-
-        AgendamentoController.agendar(tipoServico, cpfCliente, cpfFuncionario, data);
+        AgendamentoController.agendar(tipoServico, cpfCliente, cpfFuncionario, c);
     }
     
 }
