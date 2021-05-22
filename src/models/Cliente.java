@@ -11,7 +11,6 @@ public final class Cliente {
             setCriadoEm(new Date());
     }
 
-    //Caracteristicas, atributo ou propriedades
     private String nome;
     private String cpf;
     private String endereco;

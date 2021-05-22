@@ -1,18 +1,19 @@
 
 package models;
 
+import java.util.Date;
+
 public class Agendamento {
     private Cliente cliente;
     private Funcionario funcionario;
     private TipoServico tiposervico;
-    private String dia;
+    private Date data;
 
-    public String getDia() {
-        return dia;
-    }
-
-    public void setDia(String dia) {
-        this.dia = dia;
+    public Agendamento(Cliente cliente, Funcionario funcionario, TipoServico tiposervico, Date data) {
+        this.cliente = cliente;
+        this.funcionario = funcionario;
+        this.tiposervico = tiposervico;
+        this.data = data;
     }
 
     public Cliente getCliente() {
@@ -37,5 +38,13 @@ public class Agendamento {
 
     public void setTiposervico(TipoServico tiposervico) {
         this.tiposervico = tiposervico;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
     }
 }

@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 import Controllers.FuncionarioController;
 import models.Funcionario;
-import models.Horario;
-import models.HorariosDoDia;
 
 public class CadastrarFuncionario {
     
@@ -15,20 +13,17 @@ public class CadastrarFuncionario {
     private String cpf;
 
     public static void renderizar(){
+        newFuncionario = new Funcionario();
         System.out.println("----CADASTRAR FUNCIONARIO----");
         System.out.println("\nInforme o nome do funcionario:");
-        String nome = sc.next();
+        newFuncionario.setNome(sc.next());
         System.out.println("\nInforme o cpf do funcionario:");
-        String cpf = sc.next();
-        System.out.println("\nInforme o horário de entrada do funcionário:");
-        int horarioInicio = 10; // ALTERAR
-        System.out.println("\nInforme o horário de saída do funcionário:");
-        int horarioFim = 15; // ALTERAR
+        newFuncionario.setCpf(sc.next());
 
-        newFuncionario = new Funcionario(nome, cpf, horarioInicio, horarioFim);
-        FuncionarioController.cadastrar(newFuncionario);
-        for (HorariosDoDia horariosdoMes: newFuncionario.getHorariosDisponiveisNoMes()) {
-            System.out.println(horariosdoMes.getHorarios());
+        if (FuncionarioController.cadastrar(newFuncionario)) {
+            System.out.println("Funcionário cadastrado com sucesso.");
+        } else {
+            System.out.println("Não foi possível cadastrar o funcionário, CPF já em uso.");
         }
     }
 }

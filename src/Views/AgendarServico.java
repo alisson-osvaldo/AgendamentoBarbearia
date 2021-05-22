@@ -1,7 +1,9 @@
 
 package Views;
 
+import java.util.Date;
 import java.util.Scanner;
+import java.util.Calendar;
 
 import Controllers.AgendamentoController;
 import models.Agendamento;
@@ -9,11 +11,8 @@ import models.Agendamento;
 
 public class AgendarServico {
     private static Scanner sc = new Scanner(System.in); 
-    private static Agendamento agendamento;
 
     public static void renderizar(){
-        agendamento = new Agendamento();
-        
         System.out.println("----AGENDAMENTO DE HORÀRIO----");
         System.out.println("\nInforme o tipo de serviço:");
         String tipoServico = sc.next();
@@ -21,10 +20,21 @@ public class AgendarServico {
         String cpfCliente = sc.next();
         System.out.println("\nInforme o cpf do funcionário:");
         String cpfFuncionario = sc.next();
-        System.out.println("\nInforme o dia do agendamento(dd-MM-yyyy):");
-        String dia = sc.next();
+        System.out.println("\nInforme o ano do agendamento");
+        int ano = sc.nextInt();
+        System.out.println("\nInforme o mês do agendamento");
+        int mes = sc.nextInt();
+        System.out.println("\nInforme o dia do agendamento");
+        int dia = sc.nextInt();
+        System.out.println("\nInforme a hora do agendamento");
+        int hora = sc.nextInt();
 
-        AgendamentoController.agendar(tipoServico, cpfCliente, cpfFuncionario, dia);
+        Calendar c = Calendar.getInstance();
+        c.set(ano, mes - 1, dia, hora, 0, 0);
+
+        Date data = c.getTime();
+
+        AgendamentoController.agendar(tipoServico, cpfCliente, cpfFuncionario, data);
     }
     
 }

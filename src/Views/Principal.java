@@ -14,6 +14,7 @@ public class Principal {
             System.out.println("\n 3- Cadastrar funcionario");
             System.out.println("\n 4- Cadastrar Serviço");
             System.out.println("\n 5- Agendar um serviço");
+            System.out.println("\n 0- Sair");
             System.out.println("\nEscolha uma opcão");
             opcao = sc.nextInt();
             

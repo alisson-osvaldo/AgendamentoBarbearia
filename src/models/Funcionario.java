@@ -6,29 +6,15 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Funcionario {
-    private String nomeFuncionario;
+    private String nome;
     private String cpf;
-    private int horarioInicio;
-    private int horarioFim;
-    private HorariosDoDia[] horariosDisponiveisNoMes = new HorariosDoDia[30];
 
-    public Funcionario(String nomeFuncionario, String cpf, int horarioInicio, int horarioFim) {
-        this.nomeFuncionario = nomeFuncionario;
-        this.cpf = cpf;
-        this.horarioInicio = horarioInicio;
-        this.horarioFim = horarioFim;
-        // Cria os horários dos próximos 30 dias a partir da data atual
-        for (int i = 0; i < 30; i++) {
-            SimpleDateFormat dateFormat=new SimpleDateFormat();
-            dateFormat.applyPattern("dd-MM-yyyy");
+    public String getNome() {
+        return nome;
+    }
 
-            Calendar c = Calendar.getInstance();
-            c.add(Calendar.DAY_OF_YEAR, i);
-            Date date = c.getTime();
-
-            HorariosDoDia horarioDia = new HorariosDoDia(dateFormat.format(date), horarioInicio, horarioFim);
-            horariosDisponiveisNoMes[i] = new HorariosDoDia(dateFormat.format(date), horarioInicio, horarioFim);
-        }
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getCpf() {
@@ -37,20 +23,6 @@ public class Funcionario {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public HorariosDoDia[] getHorariosDisponiveisNoMes() {
-        return horariosDisponiveisNoMes;
-    }
-
-    @Override
-    public String toString() {
-        return "Funcionario{" +
-                "nomeFuncionario='" + nomeFuncionario + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", horarioInicio=" + horarioInicio +
-                ", horarioFim=" + horarioFim +
-                '}';
     }
 }
     
