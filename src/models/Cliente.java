@@ -11,14 +11,11 @@ public final class Cliente {
             setCriadoEm(new Date());
     }
 
-    //Caracteristicas, atributo ou propriedades
     private String nome;
     private String cpf;
     private String endereco;
     private String telefone;
     private Date   criadoEm;
-
-
 
     public String getEndereco() {
                     return endereco;
@@ -58,7 +55,10 @@ public final class Cliente {
     public String toString() {
             return "Nome: " + getNome() + " | cpf: " + getCpf();
     }
-	
+
+   
+
+  
 	
 }
 

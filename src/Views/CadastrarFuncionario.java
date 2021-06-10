@@ -2,19 +2,29 @@
 package Views;
 
 import java.util.Scanner;
+
+import Controllers.FuncionarioController;
+import Util.Console;
 import models.Funcionario;
 
 public class CadastrarFuncionario {
     
     private static Scanner sc = new Scanner(System.in); 
-    private static Funcionario funcionario;
-    
+    private static Funcionario newFuncionario;
+    private String cpf;
+
     public static void renderizar(){
-        funcionario = new Funcionario();
+        newFuncionario = new Funcionario();
         System.out.println("----CADASTRAR FUNCIONARIO----");
         System.out.println("\nInforme o nome do funcionario:");
-        funcionario.setNomeFuncionario(sc.next());
-        System.out.println("\nQual o horario de trabalho:");
-        funcionario.setHrTrabalho(sc.nextInt());
+        newFuncionario.setNome(sc.next());
+        int cpfNumber = Console.lerInteiro("\nInforme o CPF:");
+        newFuncionario.setCpf(String.valueOf(cpfNumber));
+
+        if (FuncionarioController.cadastrar(newFuncionario)) {
+            System.out.println("Funcionário cadastrado com sucesso.");
+        } else {
+            System.out.println("Não foi possível cadastrar o funcionário, CPF já em uso.");
+        }
     }
 }

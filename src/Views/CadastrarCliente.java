@@ -4,6 +4,7 @@ package Views;
 import java.util.Scanner;
 import models.Cliente;
 import Controllers.ClienteController;
+import Util.Console;
 
 public class CadastrarCliente {
     
@@ -16,12 +17,12 @@ public class CadastrarCliente {
         System.out.println("------CADASTRAR CLIENTE------");
         System.out.println("\nInforme o nome do cliente:");
         cliente.setNome(sc.next());
-        System.out.println("\nInforme o CPF:");
-        cliente.setCpf(sc.next());
+        int cpfNumber = Console.lerInteiro("\nInforme o CPF:");
+        cliente.setCpf(String.valueOf(cpfNumber)); //convertendo um Int para String
         System.out.println("\nInforme o endereço:");
         cliente.setEndereco(sc.next());
-        System.out.println("\nInforme o telefone:");
-        cliente.setTelefone(sc.next());
+        int telefoneNumber = Console.lerInteiro("\nInforme o telefone:");
+        cliente.setTelefone(String.valueOf(telefoneNumber));
     
         
         if(ClienteController.cadastrar(cliente)) {

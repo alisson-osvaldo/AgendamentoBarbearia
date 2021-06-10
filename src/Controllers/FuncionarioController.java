@@ -16,5 +16,18 @@ public class FuncionarioController {
         funcionarios.add(funcionario);
         return true;
     }
-    
+
+    public static Funcionario procurarPorCpf(String cpf){
+        for(Funcionario funcionarioCadastrado : funcionarios) {
+            if(funcionarioCadastrado.getCpf().equals(cpf)){
+                return funcionarioCadastrado;
+            }
+        }
+        return null;
+    }
+
+    public static ArrayList<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
 }
