@@ -16,6 +16,7 @@ public class Principal {
                  System.out.println("\n 3- Cadastrar funcionario");
                  System.out.println("\n 4- Cadastrar Serviço");
                  System.out.println("\n 5- Agendar um serviço");
+                 System.out.println("\n 6- Listar serviços agendados");
                  System.out.println("\n 0- Sair");
                  opcao = Console.lerInteiro("\nEscolha uma opção:");
                  
@@ -34,6 +35,9 @@ public class Principal {
                          break;
                      case 5 :
                          AgendarServico.renderizar();
+                         break;
+                     case 6 :
+                         ListarAgendamentos.renderizar();
                          break;
                  }
                  

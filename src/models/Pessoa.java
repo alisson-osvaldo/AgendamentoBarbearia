@@ -8,7 +8,7 @@ public abstract class Pessoa {
    }
    
     private String nome;
-    private String CPF;
+    private String cpf;
     private String endereco;
     private String telefone;
 
@@ -20,30 +20,39 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public String getCPF() {
-        return CPF;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
-
+    
     public String getEndereco() {
-        return endereco;
+                    return endereco;
     }
-
     public void setEndereco(String endereco) {
-        this.endereco = endereco;
+            this.endereco = endereco;
     }
-
     public String getTelefone() {
-        return telefone;
+            return telefone;
+    }
+    public void setTelefone(String telefone) {
+            this.telefone = telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+   
+
+    @Override
+    public String toString() {
+        return 
+          "\nNome=" + getNome() + 
+          "\nCPF=" + getCpf() +
+          "\nEndereço: " + getEndereco() +
+          "\nFone: " + getTelefone();
     }
-       
+
+
    
    
   

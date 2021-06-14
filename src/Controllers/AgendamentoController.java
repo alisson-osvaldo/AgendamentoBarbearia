@@ -5,13 +5,16 @@ import models.Agendamento;
 import models.Cliente;
 import models.Funcionario;
 import models.TipoServico;
-import java.util.Date;
 import java.util.Calendar;
 
 import java.util.ArrayList;
 
 public class AgendamentoController {
     private static ArrayList<Agendamento> agendamentos = new ArrayList<Agendamento>();
+    
+    public static ArrayList<Agendamento> listar() {
+	return agendamentos; 
+    }
 
     public static boolean agendar(String tipoServico, String cpfCliente, String cpfFuncionario, Calendar data){
       Funcionario funcionario = FuncionarioController.procurarPorCpf(cpfFuncionario);
