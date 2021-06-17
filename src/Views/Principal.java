@@ -57,8 +57,6 @@ public class Principal {
 - tratar exceção no agendamento                                              OK
 
 
-
-
 *
 -(classe: Carrinho; Para somar o valor total dos serviços)
 -(cadastrarServico; Para cadastrar um Array de serviços) 

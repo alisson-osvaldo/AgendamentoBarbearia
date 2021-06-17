@@ -1,16 +1,19 @@
 
 package models;
 
+import java.util.Date;
+
 public abstract class Pessoa {
    
    public Pessoa(){
-       
+       setCriadoEm(new Date());
    }
    
     private String nome;
     private String cpf;
     private String endereco;
     private String telefone;
+    private Date criadoEm;
 
     public String getNome() {
         return nome;
@@ -40,7 +43,14 @@ public abstract class Pessoa {
     public void setTelefone(String telefone) {
             this.telefone = telefone;
     }
+    public Date getCriadoEm() {
+            return criadoEm;
+    }
+    public void setCriadoEm(Date criadoEm) {
+            this.criadoEm = criadoEm;
+    }
 
+    
    
 
     @Override
@@ -49,7 +59,8 @@ public abstract class Pessoa {
           "\nNome=" + getNome() + 
           "\nCPF=" + getCpf() +
           "\nEndereço: " + getEndereco() +
-          "\nFone: " + getTelefone();
+          "\nFone: " + getTelefone() +
+          "\nCriado em: " + getCriadoEm();
     }
 
 
