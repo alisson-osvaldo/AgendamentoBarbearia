@@ -19,8 +19,6 @@ public class CadastrarCliente {
         cliente.setNome(sc.next());
         int cpfNumber = Console.lerInteiro("\nInforme o CPF:");
         cliente.setCpf(String.valueOf(cpfNumber)); //convertendo um Int para String
-        System.out.println("\nInforme o endereço:");
-        cliente.setEndereco(sc.next());
         int telefoneNumber = Console.lerInteiro("\nInforme o telefone:");
         cliente.setTelefone(String.valueOf(telefoneNumber));
     

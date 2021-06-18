@@ -17,28 +17,34 @@ public class Principal {
                  System.out.println("\n 4- Cadastrar Serviço");
                  System.out.println("\n 5- Agendar um serviço");
                  System.out.println("\n 6- Listar serviços agendados");
+                 System.out.println("\n 7- Cadastrar Produto");
+                 System.out.println("\n 8- Listar Produtos");
                  System.out.println("\n 0- Sair");
                  opcao = Console.lerInteiro("\nEscolha uma opção:");
                  
                  switch (opcao) {
-                     case 1 :
-                         CadastrarCliente.renderizar();
-                         break;
-                     case 2:
-                         ListarClientes.renderizar();
-                         break;
-                     case 3 :
-                         CadastrarFuncionario.renderizar();
-                         break;
-                     case 4 :
-                         CadastrarServico.renderizar();
-                         break;
-                     case 5 :
-                         AgendarServico.renderizar();
-                         break;
-                     case 6 :
-                         ListarAgendamentos.renderizar();
-                         break;
+                    case 1 :
+                        CadastrarCliente.renderizar();
+                        break;
+                    case 2:
+                        ListarClientes.renderizar();
+                        break;
+                    case 3 :
+                        CadastrarFuncionario.renderizar();
+                        break;
+                    case 4 :
+                        CadastrarServico.renderizar();
+                        break;
+                    case 5 :
+                        AgendarServico.renderizar();
+                        break;
+                    case 6 :
+                        ListarAgendamentos.renderizar();
+                        break;
+                    case 7 : CadastrarProduto.renderizar();
+                        break;
+                    case 8 : ListarProdutos.renderizar();
+                        break;
                  }
                  
              }while(opcao != 0);
@@ -58,8 +64,11 @@ public class Principal {
 
 
 *
--(classe: Carrinho; Para somar o valor total dos serviços)
--(cadastrarServico; Para cadastrar um Array de serviços) 
+
+-(cadastrarServico; Para cadastrar um Array de serviços)dando a opção do cliente escolher mais de um tipo de serviço
+-(uma classe para prudutos e uma para venda de produtos (usando herança))
+-(classe: Carrinho; Para somar o valor total dos serviços)Para somar os serviços e compra de Produtos.
+
 */
 
 

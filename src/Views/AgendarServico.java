@@ -1,13 +1,11 @@
 
 package Views;
 
-import java.util.Date;
 import java.util.Scanner;
 import java.util.Calendar;
 
 import Controllers.AgendamentoController;
 import Util.Console;
-import models.Agendamento;
 
 
 public class AgendarServico {
@@ -17,8 +15,8 @@ public class AgendarServico {
         System.out.println("----AGENDAMENTO DE HORÀRIO----");
         System.out.println("\nInforme o tipo de serviço:");
         String tipoServico = sc.next();
-    //    System.out.println("Deseja agendar outros serviços?");
-            
+    //  System.out.println("Deseja agendar outros serviços?");
+    
         int cpfClient = Console.lerInteiro("\nInforme o CPF do cliente:");
         String cpfCliente = String.valueOf(cpfClient);
         int cpfFun = Console.lerInteiro("\nInforme o CPF do funcionário:");

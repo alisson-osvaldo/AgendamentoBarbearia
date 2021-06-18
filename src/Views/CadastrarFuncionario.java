@@ -20,6 +20,8 @@ public class CadastrarFuncionario {
         newFuncionario.setNome(sc.next());
         int cpfNumber = Console.lerInteiro("\nInforme o CPF:");
         newFuncionario.setCpf(String.valueOf(cpfNumber));
+        System.out.println("\nInforme o endereço:");
+        newFuncionario.setEndereco(sc.next());
 
         if (FuncionarioController.cadastrar(newFuncionario)) {
             System.out.println("Funcionário cadastrado com sucesso.");

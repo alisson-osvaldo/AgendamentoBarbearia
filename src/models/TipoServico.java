@@ -2,7 +2,7 @@
 package models;
 
 public class TipoServico {
-    
+       
     private String tipo;
     private float valor;
 
