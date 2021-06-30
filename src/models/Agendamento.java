@@ -47,4 +47,14 @@ public class Agendamento {
     public void setData(Calendar data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "\nCliente : " + this.cliente.getNome() + 
+               "\nAtendente : " + this.funcionario.getNome()+ 
+                "\nServico : " + this.tiposervico.getTipo() + "  |  Valor: " + this.tiposervico.getValor() +
+                "\nData e horario do agendamento : " + data;
+    }
+    
+    
 }

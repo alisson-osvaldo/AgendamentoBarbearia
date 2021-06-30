@@ -5,13 +5,16 @@ import models.Agendamento;
 import models.Cliente;
 import models.Funcionario;
 import models.TipoServico;
-import java.util.Date;
 import java.util.Calendar;
 
 import java.util.ArrayList;
 
 public class AgendamentoController {
     private static ArrayList<Agendamento> agendamentos = new ArrayList<Agendamento>();
+    
+    public static ArrayList<Agendamento> listar() {
+	return agendamentos; 
+    }
 
     public static boolean agendar(String tipoServico, String cpfCliente, String cpfFuncionario, Calendar data){
       Funcionario funcionario = FuncionarioController.procurarPorCpf(cpfFuncionario);
@@ -19,7 +22,7 @@ public class AgendamentoController {
       TipoServico servico = ServicoController.procurarPorServico((tipoServico));
 
       if(servico == null) {
-          System.out.println("Não existe um serviço com esse cpf, por favor cadastre um serviço válido");
+          System.out.println("O serviço não existe, por favor cadastre um serviço válido");
           return false;
       }
 
@@ -49,11 +52,11 @@ public class AgendamentoController {
         for(Agendamento agendamento : agendamentos) {
             System.out.println("Data parametro: "+  data);
             System.out.println("Data agendamento: "+ agendamento.getData());
-            if((agendamento.getFuncionario().getCpf().equals(funcionario.getCpf()))) {
-                if(agendamento.getData().get(Calendar.YEAR) == data.get(Calendar.YEAR)) {
-                    if(agendamento.getData().get(Calendar.MONTH) == data.get(Calendar.MONTH)) {
-                        if(agendamento.getData().get(Calendar.DAY_OF_MONTH) == data.get(Calendar.DAY_OF_MONTH)) {
-                            if (agendamento.getData().get(Calendar.HOUR_OF_DAY) == data.get(Calendar.HOUR_OF_DAY)) {
+            if((agendamento.getFuncionario().getCpf().equals(funcionario.getCpf()))) { //validar cpf informado com o cpf do funcionario
+                if(agendamento.getData().get(Calendar.YEAR) == data.get(Calendar.YEAR)) {  //validar ano 
+                    if(agendamento.getData().get(Calendar.MONTH) == data.get(Calendar.MONTH)) { //validar mês
+                        if(agendamento.getData().get(Calendar.DAY_OF_MONTH) == data.get(Calendar.DAY_OF_MONTH)) { //validar dia do mês
+                            if (agendamento.getData().get(Calendar.HOUR_OF_DAY) == data.get(Calendar.HOUR_OF_DAY)) { //validar Horaio do dia
                                 return false;
                             }
                         }
