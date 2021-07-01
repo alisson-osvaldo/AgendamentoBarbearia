@@ -3,6 +3,12 @@ package models;
 
 import java.util.Calendar;
 
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.TimeZone;
+
 public class Agendamento {
     private Cliente cliente;
     private Funcionario funcionario;
@@ -50,10 +56,17 @@ public class Agendamento {
 
     @Override
     public String toString() {
+
+        TimeZone tz = data.getTimeZone();
+        ZoneId zoneId = tz.toZoneId();
+
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(data.toInstant(), zoneId);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
         return "\nCliente : " + this.cliente.getNome() + 
                "\nAtendente : " + this.funcionario.getNome()+ 
                 "\nServico : " + this.tiposervico.getTipo() + "  |  Valor: " + this.tiposervico.getValor() +
-                "\nData e horario do agendamento : " + data;
+                "\nData e horario do agendamento : " + localDateTime.format(formatter);
     }
     
     

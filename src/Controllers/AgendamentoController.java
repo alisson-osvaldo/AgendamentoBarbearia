@@ -44,6 +44,7 @@ public class AgendamentoController {
       Agendamento agendamento = new Agendamento(cliente, funcionario, servico, data);
 
       agendamentos.add(agendamento);
+      CarrinhoController.adicionarAoCarrinho(servico, cliente);
       System.out.println("Agendamento cadastrado com sucesso.");
       return true;
     }
