@@ -13,7 +13,7 @@ public class VendaProduto {
         System.out.println("Escolha o produto: ");
         String nomeProduto = sc.next();
         
-        VendaController.comprar(nomeProduto);
+
     }
 }
     

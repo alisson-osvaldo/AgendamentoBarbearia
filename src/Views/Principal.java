@@ -3,6 +3,17 @@ package Views;
 import java.util.Scanner;
 import Util.Console;
 
+import models.Funcionario;
+import models.Cliente;
+import models.TipoServico;
+import models.Agendamento;
+
+import Controllers.ServicoController;
+import Controllers.ClienteController;
+import Controllers.FuncionarioController;
+import Controllers.AgendamentoController;
+import java.util.Calendar;
+
 public class Principal {
      public static void main(String[] args) {
          try (Scanner sc = new Scanner(System.in)) {
@@ -19,6 +30,9 @@ public class Principal {
                  System.out.println("\n 6- Listar serviços agendados");
                  System.out.println("\n 7- Cadastrar Produto");
                  System.out.println("\n 8- Listar Produtos");
+                 System.out.println("\n 9- Comprar produto");
+                 System.out.println("\n 10- Finalizar compra");
+                 System.out.println("\n 11- TESTAR");
                  System.out.println("\n 0- Sair");
                  opcao = Console.lerInteiro("\nEscolha uma opção:");
                  
@@ -45,13 +59,47 @@ public class Principal {
                         break;
                     case 8 : ListarProdutos.renderizar();
                         break;
+                     case 9 :
+                         ComprarProduto.renderizar();
+                         break;
+                     case 10 :
+                         FinalizarCompra.renderizar();
+                         break;
+                     case 11 : TESTE_APAGAR_DEPOIS();
+                         break;
                  }
                  
              }while(opcao != 0);
              sc.close();
          }
     }
-    
+
+    public static void TESTE_APAGAR_DEPOIS(){
+         Funcionario funcionario_teste = new Funcionario();
+         funcionario_teste.setCpf("123");
+        funcionario_teste.setNome("123");
+        funcionario_teste.setTelefone("123");
+
+        Cliente cliente_teste = new Cliente();
+        cliente_teste.setCpf("123");
+        cliente_teste.setNome("123");
+        cliente_teste.setTelefone("123");
+
+        TipoServico servico = new TipoServico();
+        servico.setTipo("123");
+        servico.setValor(123);
+
+        ServicoController.cadastrar(servico);
+        FuncionarioController.cadastrar(funcionario_teste);
+        ClienteController.cadastrar(cliente_teste);
+
+        Calendar c = Calendar.getInstance();
+        c.set(2021, 8 - 1, 8, 8, 0, 0);
+        Agendamento agendamento = new Agendamento(cliente_teste, funcionario_teste, servico, c);
+
+        AgendamentoController.agendar("123", "123", "123", c);
+
+    }
 }
 
 /*  

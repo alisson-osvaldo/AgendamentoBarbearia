@@ -13,7 +13,7 @@ public class ProdutosController {
     
     public static boolean cadastrar(Produto produto){
         for(Produto produtoCadastrado : produtos){
-            if(produtoCadastrado.getNomeP().equals(produto.getNomeP())){
+            if(produtoCadastrado.getTipo().equals(produto.getTipo())){
                 return false;
             }
         }
@@ -21,10 +21,9 @@ public class ProdutosController {
        return true;
     }
     
-    
     public static Produto procurarPorNome(String nomeP){
         for(Produto produtoCadastrado : produtos){
-            if(produtoCadastrado.getNomeP().equals(nomeP)){
+            if(produtoCadastrado.getTipo().equals(nomeP)){
                 return produtoCadastrado;
             }
         }

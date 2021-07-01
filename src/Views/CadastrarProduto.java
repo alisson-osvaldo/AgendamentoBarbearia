@@ -1,8 +1,9 @@
 package Views;
 
-import java.util.Scanner;
-import models.Produto;
 import Controllers.ProdutosController;
+import models.Produto;
+
+import java.util.Scanner;
 
 public class CadastrarProduto {
   
@@ -14,7 +15,7 @@ public class CadastrarProduto {
         System.out.println("");
         System.out.println("----CADASTRAR PRODUTO----");
         System.out.println("\nNome do produto:");
-        newProduto.setNomeP(sc.next());
+        newProduto.setTipo(sc.next());
         System.out.println("\nValor: ");
         newProduto.setValor(sc.nextFloat());
         
