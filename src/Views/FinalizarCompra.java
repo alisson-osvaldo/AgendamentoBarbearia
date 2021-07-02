@@ -2,6 +2,7 @@ package Views;
 
 import Controllers.CarrinhoController;
 import Controllers.ClienteController;
+import Util.Console;
 import models.Cliente;
 
 import java.util.Scanner;
@@ -12,8 +13,8 @@ public class FinalizarCompra {
 
     public static void renderizar(){
         System.out.println("----FINALIZAR COMPRA----");
-        System.out.println("Digite o CPF do cliente");
-        String cpfCliente = sc.next();
+        int cpfNumber = Console.lerInteiro("Digite o CPF do cliente");
+        String cpfCliente = String.valueOf(cpfNumber);
 
         Cliente cliente = ClienteController.procurarPorCpf(cpfCliente);
         if(cliente == null) {

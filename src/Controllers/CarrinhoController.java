@@ -30,11 +30,14 @@ public class CarrinhoController {
 
     public static void imprimirTotal(String cpf){
         Double total = 0.0;
-
-        for(Item item : acharCarrinhoPorCpfUsuario(cpf).getConteudo()){
-            total = total + item.getValor();
+        if (acharCarrinhoPorCpfUsuario(cpf) == null) {
+            System.out.println("Total = 0:");
+        }else{
+            for(Item item : acharCarrinhoPorCpfUsuario(cpf).getConteudo()){
+                total = total + item.getValor();
+            }
+            System.out.println("Total do pedido: " + total);
         }
-        System.out.println("Total do pedido: " + total);
     }
 
     public static void limparCarrinho(String cpf){

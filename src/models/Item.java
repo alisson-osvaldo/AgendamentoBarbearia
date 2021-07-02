@@ -23,9 +23,6 @@ public abstract class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "valor=" + valor +
-                ", tipo='" + tipo + '\'' +
-                '}';
+        return  "Produto: " + tipo + "     Valor: " + valor ;
     }
 }

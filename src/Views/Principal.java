@@ -32,7 +32,7 @@ public class Principal {
                  System.out.println("\n 8- Listar Produtos");
                  System.out.println("\n 9- Comprar produto");
                  System.out.println("\n 10- Finalizar compra");
-                 System.out.println("\n 11- TESTAR");
+                // System.out.println("\n 11- TESTAR");
                  System.out.println("\n 0- Sair");
                  opcao = Console.lerInteiro("\nEscolha uma opção:");
                  
@@ -65,16 +65,17 @@ public class Principal {
                      case 10 :
                          FinalizarCompra.renderizar();
                          break;
-                     case 11 : TESTE_APAGAR_DEPOIS();
-                         break;
+                     /*case 11 : 
+                         TESTAR();
+                         break;*/
                  }
                  
              }while(opcao != 0);
              sc.close();
          }
-    }
+   /* }
 
-    public static void TESTE_APAGAR_DEPOIS(){
+    public static void TESTAR(){
          Funcionario funcionario_teste = new Funcionario();
          funcionario_teste.setCpf("123");
         funcionario_teste.setNome("123");
@@ -97,7 +98,7 @@ public class Principal {
         c.set(2021, 8 - 1, 8, 8, 0, 0);
         Agendamento agendamento = new Agendamento(cliente_teste, funcionario_teste, servico, c);
 
-        AgendamentoController.agendar("123", "123", "123", c);
+        AgendamentoController.agendar("123", "123", "123", c);*/
 
     }
 }
@@ -111,12 +112,12 @@ public class Principal {
 - tratar exceção no agendamento                                              OK
 
 
-*
-
 -(cadastrarServico; Para cadastrar um Array de serviços)dando a opção do cliente escolher mais de um tipo de serviço
 -(uma classe para prudutos e uma para venda de produtos (usando herança))
 -(classe: Carrinho; Para somar o valor total dos serviços)Para somar os serviços e compra de Produtos.
 
+- Adicionar listar Funcionarios;
+-Aviso (não tem Produtos cadastrados)
 */
 
 

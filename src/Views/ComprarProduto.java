@@ -3,6 +3,7 @@ package Views;
 import Controllers.CarrinhoController;
 import Controllers.ProdutosController;
 import Controllers.ClienteController;
+import Util.Console;
 import models.Carrinho;
 import models.Produto;
 import models.Cliente;
@@ -15,8 +16,9 @@ public class ComprarProduto {
 
     public static void renderizar(){
         System.out.println("----COMPRAR PRODUTO----");
-        System.out.println("Digite o CPF do cliente");
-        String cpfCliente = sc.next();
+        int cpfNumber = Console.lerInteiro("Digite o CPF do cliente");
+        String cpfCliente = String.valueOf(cpfNumber);
+        
         Cliente cliente = ClienteController.procurarPorCpf(cpfCliente);
         if(cliente == null) {
             System.out.println("Não foi possível encontrar um cliente com esse CPF");
